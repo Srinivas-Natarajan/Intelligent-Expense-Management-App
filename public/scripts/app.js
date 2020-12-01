@@ -79,6 +79,10 @@ var IndecisionApp = function (_React$Component) {
     return IndecisionApp;
 }(React.Component);
 
+IndecisionApp.defaultProps = {
+    options: []
+};
+
 var Header = function Header(props) {
     return React.createElement(
         "div",
@@ -115,20 +119,6 @@ var Action = function Action(props) {
     );
 };
 
-// class Action extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <button
-//                     onClick={this.props.handlePick}
-//                     disabled={!this.props.hasOptions}>
-//                     What should i do?
-//                 </button>
-//             </div>
-//         );
-//     }
-// }
-
 var Options = function Options(props) {
     return React.createElement(
         "div",
@@ -148,23 +138,6 @@ var Options = function Options(props) {
     );
 };
 
-// class Options extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <button onClick={this.props.handleRemoveAll}>Remove All Items</button>
-//                 <ol>
-//                     {
-//                         this.props.options.map((item) => {
-//                             return <Option key={item} option={item} />;
-//                         })
-//                     }
-//                 </ol>
-//             </div>
-//         );
-//     }
-// }
-
 var Option = function Option(props) {
     return React.createElement(
         "div",
@@ -176,16 +149,6 @@ var Option = function Option(props) {
         )
     );
 };
-
-// class Option extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <li>{this.props.option}</li>
-//             </div>
-//         );
-//     }
-// }
 
 var AddOptions = function (_React$Component2) {
     _inherits(AddOptions, _React$Component2);

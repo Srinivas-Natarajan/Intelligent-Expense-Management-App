@@ -59,6 +59,12 @@ class IndecisionApp extends React.Component {
     }
 }
 
+IndecisionApp.defaultProps = {
+    options: []
+}
+
+
+
 
 
 const Header = (props) => {
@@ -74,6 +80,8 @@ Header.defaultProps = {
     title: "Indecision"
 }
 
+
+
 const Action = (props) => {
     return (
         <div>
@@ -86,19 +94,7 @@ const Action = (props) => {
     );
 }
 
-// class Action extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <button
-//                     onClick={this.props.handlePick}
-//                     disabled={!this.props.hasOptions}>
-//                     What should i do?
-//                 </button>
-//             </div>
-//         );
-//     }
-// }
+
 
 const Options = (props) => {
     return (
@@ -115,23 +111,6 @@ const Options = (props) => {
     );
 }
 
-// class Options extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <button onClick={this.props.handleRemoveAll}>Remove All Items</button>
-//                 <ol>
-//                     {
-//                         this.props.options.map((item) => {
-//                             return <Option key={item} option={item} />;
-//                         })
-//                     }
-//                 </ol>
-//             </div>
-//         );
-//     }
-// }
-
 const Option = (props) => {
     return (
         <div>
@@ -139,16 +118,6 @@ const Option = (props) => {
         </div>
     );
 }
-
-// class Option extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <li>{this.props.option}</li>
-//             </div>
-//         );
-//     }
-// }
 
 class AddOptions extends React.Component {
 
