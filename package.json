@@ -4,8 +4,22 @@
   "main": "index.js",
   "author": "Srinivas",
   "license": "MIT",
+  "scripts": {
+    "serve": "live-server public/",
+    "build": "webpack --watch",
+    "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
+  },
   "dependencies": {
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1"
-  }
+    "babel-preset-react": "^6.24.1",
+    "core-js": "3",
+    "live-server": "^1.2.1",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "validator": "^13.5.1",
+    "webpack": "3.1.0"
+  },
+  "devDependencies": {}
 }
