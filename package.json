@@ -7,7 +7,8 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "test": "jest"
   },
   "dependencies": {
     "babel-core": "6.25.0",
@@ -18,10 +19,15 @@
     "babel-preset-react": "^6.24.1",
     "core-js": "3",
     "css-loader": "0.28.4",
+    "jest": "20.0.4",
     "live-server": "^1.2.1",
+    "moment": "2.18.1",
     "node-sass": "4.13",
     "normalize.css": "7.0.0",
+    "path": "^0.12.7",
     "react": "16.0.0",
+    "react-addons-shallow-compare": "15.6.0",
+    "react-dates": "12.7.0",
     "react-dom": "16.0.0",
     "react-modal": "^3.12.1",
     "react-redux": "5.0.5",
@@ -31,7 +37,7 @@
     "style-loader": "0.18.2",
     "uuid": "3.1.0",
     "validator": "^13.5.1",
-    "webpack": "3.1.0",
+    "webpack": "3.10",
     "webpack-dev-server": "2.5.1"
   },
   "devDependencies": {}
