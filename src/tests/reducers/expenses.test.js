@@ -8,8 +8,28 @@ test("Default values", () => {
     expect(state).toEqual([]);
 })
 
-test("Add Expense", () => {
 
+test("Add Expense", () => {
+    const action = {
+        type: "ADD_EXPENSE",
+        expense: {
+            id: "4",
+            description: 'Lunch',
+            note: '',
+            amount: 5500,
+            createdAt: 789098
+        }
+    }
+    const state = expenseReducers(expenses, action)
+    expect(state).toEqual(
+        expenses.concat({
+            id: expect.any(String),
+            description: 'Lunch',
+            note: '',
+            amount: 5500,
+            createdAt: 789098
+        })
+    )
 })
 
 
@@ -22,6 +42,7 @@ test("Remove Expense valid ID", () => {
     expect(state).toEqual([expenses[0], expenses[2]])
 })
 
+
 test("Remove Expense Invalid ID", () => {
     const action = {
         type: "REMOVE_EXPENSE",
@@ -32,6 +53,33 @@ test("Remove Expense Invalid ID", () => {
 })
 
 
-test("Edit Expense", () => {
+test("Edit Valid Expense", () => {
+    const action = {
+        type: "EDIT_EXPENSE",
+        id: "3",
+        updates: {
+            description: 'Butter',
+            note: '',
+            amount: 89500,
+            createdAt: 789098
+        }
+    }
+    const state = expenseReducers(expenses, action)
+    expect(state).toEqual([expenses[0], expenses[1]].concat({ id: "3", ...action.updates }))
+})
 
+
+test("Edit Invalid Expense", () => {
+    const action = {
+        type: "EDIT_EXPENSE",
+        id: "4",
+        updates: {
+            description: 'Butter',
+            note: '',
+            amount: 89500,
+            createdAt: 789098
+        }
+    }
+    const state = expenseReducers(expenses, action)
+    expect(state).toEqual(expenses)
 })
