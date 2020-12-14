@@ -1,15 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import numeral from 'numeral';
 
 const ExpenseListItem = ({ id, description, amount, createdAt }) => (
-  <div>
-    <NavLink to={`/edit/${id}`} activeClassName="is-active" exact={true}>{description}</NavLink>
-    <p>Amount: {'\u20B9 ' + numeral(amount).format("0,0.00")}</p>
-    <p>Created At: {moment(createdAt).format("DD MMM, YYYY")}</p>
-  </div>
+  <Link to={`/edit/${id}`} className="list-item">
+    <div>
+      <h3 className="list-item__title">{description}</h3>
+      <span className="list-item__subtitle"><p>{moment(createdAt).format("DD MMM, YYYY")}</p></span>
+    </div>
+    <h3 className="list-item__data">{'\u20B9 ' + numeral(amount).format("0,0.00")}</h3>
+
+  </Link>
 );
 
 export default ExpenseListItem;
