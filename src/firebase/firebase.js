@@ -19,24 +19,32 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-const items = [{
-    description: "Rent",
-    note: "Monthly rent",
-    amount: 50000,
-    createdAt: 0
-},
-{
-    description: "Coffee",
-    note: "Yum",
-    amount: 567,
-    createdAt: 1000
-},
-{
-    description: "Food",
-    note: "Yum",
-    amount: 7890,
-    createdAt: -1000
-}]
+
+export { firebase, database as default };
+
+
+
+
+
+
+// const items = [{
+//     description: "Rent",
+//     note: "Monthly rent",
+//     amount: 50000,
+//     createdAt: 0
+// },
+// {
+//     description: "Coffee",
+//     note: "Yum",
+//     amount: 567,
+//     createdAt: 1000
+// },
+// {
+//     description: "Food",
+//     note: "Yum",
+//     amount: 7890,
+//     createdAt: -1000
+// }]
 
 // database.ref('expenses').push({
 //     description: "Food",
@@ -58,16 +66,16 @@ const items = [{
 //     console.log(expenses)
 // })
 
-database.ref('expenses').on('value', (snapshot) => {
-    const expenses = []
-    snapshot.forEach((childSnapshot) => {
-        expenses.push({
-            id: childSnapshot.key,
-            ...childSnapshot.val()
-        })
-    })
-    console.log(expenses)
-})
+// database.ref('expenses').on('value', (snapshot) => {
+//     const expenses = []
+//     snapshot.forEach((childSnapshot) => {
+//         expenses.push({
+//             id: childSnapshot.key,
+//             ...childSnapshot.val()
+//         })
+//     })
+//     console.log(expenses)
+// })
 
 
 
