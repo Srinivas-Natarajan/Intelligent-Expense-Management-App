@@ -3,19 +3,7 @@
 import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/storage";
-
-// const firebaseConfig = {
-//     apiKey: "AIzaSyCBxy3wPPUYUUrBRUCPZDr_T3mJUSvaUhQ",
-//     authDomain: "expensify-a7b9c.firebaseapp.com",
-//     databaseURL: "https://expensify-a7b9c-default-rtdb.firebaseio.com",
-//     projectId: "expensify-a7b9c",
-//     storageBucket: "expensify-a7b9c.appspot.com",
-//     messagingSenderId: "486221890968",
-//     appId: "1:486221890968:web:f68b1cd00d4543f1e7d7ed",
-//     measurementId: "G-GCMQ5WYEZ0"
-// };
-
-// firebase.initializeApp(firebaseConfig);
+import 'firebase/auth';
 
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -29,9 +17,10 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 
-export { firebase, database as default };
+export { firebase, googleAuthProvider, database as default };
 
 
 
