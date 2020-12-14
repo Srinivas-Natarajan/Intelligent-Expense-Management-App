@@ -4,18 +4,29 @@ import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/storage";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCBxy3wPPUYUUrBRUCPZDr_T3mJUSvaUhQ",
-    authDomain: "expensify-a7b9c.firebaseapp.com",
-    databaseURL: "https://expensify-a7b9c-default-rtdb.firebaseio.com",
-    projectId: "expensify-a7b9c",
-    storageBucket: "expensify-a7b9c.appspot.com",
-    messagingSenderId: "486221890968",
-    appId: "1:486221890968:web:f68b1cd00d4543f1e7d7ed",
-    measurementId: "G-GCMQ5WYEZ0"
+// const firebaseConfig = {
+//     apiKey: "AIzaSyCBxy3wPPUYUUrBRUCPZDr_T3mJUSvaUhQ",
+//     authDomain: "expensify-a7b9c.firebaseapp.com",
+//     databaseURL: "https://expensify-a7b9c-default-rtdb.firebaseio.com",
+//     projectId: "expensify-a7b9c",
+//     storageBucket: "expensify-a7b9c.appspot.com",
+//     messagingSenderId: "486221890968",
+//     appId: "1:486221890968:web:f68b1cd00d4543f1e7d7ed",
+//     measurementId: "G-GCMQ5WYEZ0"
+// };
+
+// firebase.initializeApp(firebaseConfig);
+
+const config = {
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
 };
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(config);
 
 const database = firebase.database();
 
