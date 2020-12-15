@@ -17,3 +17,13 @@
 .button--secondary{
     background:$grey;
 }
+
+.button--modal{
+    @extend .button;
+    margin: $s-size;
+}
+
+.button--login{
+    @extend .button;
+    margin-top: $s-size;
+}

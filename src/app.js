@@ -6,7 +6,6 @@ import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';
 import { logout, login } from './actions/auth';
-import getVisibleExpenses from './selectors/expenses';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
 
