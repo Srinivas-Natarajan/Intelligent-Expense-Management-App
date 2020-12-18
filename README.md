@@ -12,4 +12,4 @@ The application is deployed online using Heroku
 
 ### 1. Login Page:
 
-[Login Page](https://github.com/Srinivas-Natarajan/Expensify-App/tree/main/images/login_page.png?raw=true)
+[Login Page](/images/login_page.png)
