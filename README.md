@@ -9,3 +9,7 @@ The project uses React to create the web application by creating various compone
 The application is deployed online using Heroku
 
 ## Pictures
+
+### 1. Login Page:
+
+[Login Page](https://github.com/Srinivas-Natarajan/Expensify-App/tree/main/images/login_page.png)
